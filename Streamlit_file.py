@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import date
-import streamlit.components.v1 as components
 from streamlit_calendar import calendar
 
 
