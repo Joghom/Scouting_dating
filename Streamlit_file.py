@@ -3,15 +3,13 @@ import os
 import pandas as pd
 from streamlit_calendar import calendar
 
-# Hide the manage streamlit app thing
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
-            header {visibility: hidden;}
             </style>
             """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 # Title
 st.set_page_config(page_title="Date Luuk", layout="centered")
@@ -43,9 +41,6 @@ with right_col:
 	if st.button("Next ⟶"):
 		st.session_state.photo_index = (st.session_state.photo_index + 1) % len(photos)
 
-# About Luuk text
-st.subheader("About luuk:")
-st.text("Luuk is a bla bla bla blu blu blu blblblblbl.........")
 
 # Calendar
 st.subheader("📅 Plan your date with Luuk")
