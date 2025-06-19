@@ -16,19 +16,20 @@ photos = sorted([f for f in os.listdir(photo_folder) if f.lower().endswith(('.pn
 if "photo_index" not in st.session_state:
 	st.session_state.photo_index = 0
 
-# Centered image
-st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
-st.image(os.path.join(photo_folder, photos[st.session_state.photo_index]), use_container_width=True)
-st.markdown("</div>", unsafe_allow_html=True)
+# Container with left button, image, right button
+left_col, image_col, right_col = st.columns([1, 2, 1])
 
-# Centered buttons under image
-col1, col2, col3 = st.columns([2, 1, 2])
+with image_col:
+	st.image(
+		os.path.join(photo_folder, photos[st.session_state.photo_index]),
+		width=400
+	)
 
-with col1:
+with left_col:
 	if st.button("⟵ Previous"):
 		st.session_state.photo_index = (st.session_state.photo_index - 1) % len(photos)
 
-with col3:
+with right_col:
 	if st.button("Next ⟶"):
 		st.session_state.photo_index = (st.session_state.photo_index + 1) % len(photos)
 
