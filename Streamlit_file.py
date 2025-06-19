@@ -18,7 +18,7 @@ if "photo_index" not in st.session_state:
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-	st.image(os.path.join(photo_folder, photos[st.session_state.photo_index]), use_column_width=True)
+	st.image(os.path.join(photo_folder, photos[st.session_state.photo_index]), use_container_width=True)
 
 col_left, col_right = st.columns([1, 1])
 with col_left:
