@@ -1,0 +1,6 @@
+streamlit
+streamlit-calendar
+pandas
+numpy
+datetime
+streamlit.components.v1
