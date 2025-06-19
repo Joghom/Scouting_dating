@@ -43,6 +43,9 @@ with right_col:
 	if st.button("Next ⟶"):
 		st.session_state.photo_index = (st.session_state.photo_index + 1) % len(photos)
 
+# About Luuk text
+st.subheader("About luuk:")
+st.text("Luuk is a bla bla bla blu blu blu blblblblbl.........")
 
 # Calendar
 st.subheader("📅 Plan your date with Luuk")
