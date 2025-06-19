@@ -16,17 +16,22 @@ photos = sorted([f for f in os.listdir(photo_folder) if f.lower().endswith(('.pn
 if "photo_index" not in st.session_state:
 	st.session_state.photo_index = 0
 
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-	st.image(os.path.join(photo_folder, photos[st.session_state.photo_index]), use_container_width=True)
+# Centered image
+st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
+st.image(os.path.join(photo_folder, photos[st.session_state.photo_index]), use_container_width=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
-col_left, col_right = st.columns([1, 1])
-with col_left:
+# Centered buttons under image
+col1, col2, col3 = st.columns([2, 1, 2])
+
+with col1:
 	if st.button("⟵ Previous"):
 		st.session_state.photo_index = (st.session_state.photo_index - 1) % len(photos)
-with col_right:
+
+with col3:
 	if st.button("Next ⟶"):
 		st.session_state.photo_index = (st.session_state.photo_index + 1) % len(photos)
+
 
 # Calendar
 st.subheader("📅 Plan your date with Luuk")
