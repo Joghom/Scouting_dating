@@ -3,6 +3,15 @@ import os
 import pandas as pd
 from streamlit_calendar import calendar
 
+# Hide the manage streamlit app thing
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # Title
 st.set_page_config(page_title="Date Luuk", layout="centered")
 st.title("❤️ Date Luuk")
